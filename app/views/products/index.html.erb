@@ -1,11 +1,5 @@
-<h2>Products:</h2>
+<h2><%= t('.title') %></h2>
 
 <%= link_to 'New Product', new_product_path %>
 
-<% @products.each do |product| %>
-  <div>
-    <h3><%= product.title %></h3>
-    <p><%= product.description %></p>
-    <p><%= product.price %></p>
-  </div>
-<% end %>
+<%= render @products %>
