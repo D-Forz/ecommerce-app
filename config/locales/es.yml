@@ -1,0 +1,49 @@
+es:
+  activerecord:
+    models:
+      product: "Producto"
+    attributes:
+      product:
+        title: "Título"
+        description: "Descripción"
+        price: "Precio"
+        image: "Imagen"
+    errors:
+      models:
+        product:
+          attributes:
+            title:
+              blank: "no puede estar en blanco"
+            description:
+              blank: "no puede estar en blanco"
+            price:
+              not_a_number: "no es un número"
+              greater_than: "debe ser mayor que 0"
+            image:
+              blank: "no puede estar en blanco"
+      messages:
+        record_invalid: "La validación falló: %{errors}"
+        restrict_dependent_destroy:
+          has_one: "No se puede eliminar el registro porque tiene un %{record} dependiente"
+          has_many: "No se puede eliminar el registro porque tiene %{record} dependientes"
+  common:
+    confirm: "¿Estás seguro?"
+  products:
+    index:
+      title: "Productos"
+      description: "Estos son los productos que tenemos disponibles"
+    show:
+      title: "Producto"
+      description: "Aquí puedes ver el producto"
+    new:
+      title: "Nuevo producto"
+      description: "Aquí puedes crear un nuevo producto"
+    edit:
+      title: "Editar producto"
+      description: "Aquí puedes editar el producto"
+    create:
+      created: "Tu producto ha sido creado"
+    update:
+      updated: "Tu producto ha sido actualizado"
+    destroy:
+      destroyed: "Tu producto ha sido eliminado"

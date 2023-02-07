@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: %i[show edit update destroy]
   def index
-    @products = Product.all
+    @products = Product.all.with_attached_image
   end
 
   def show; end
@@ -13,9 +13,9 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     if @product.save
-      redirect_to @product, notice: "Product was successfully created."
+      redirect_to @product, notice: t('.created')
     else
-      render :new, status: :unprocessable_entity, alert: "Product was not created."
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -23,15 +23,15 @@ class ProductsController < ApplicationController
 
   def update
     if @product.update(product_params)
-      redirect_to @product, notice: "Product was successfully updated."
+      redirect_to @product, notice: t('.updated')
     else
-      render :edit, status: :unprocessable_entity, alert: "Product was not updated."
+      render :edit, status: :unprocessable_entity
     end
   end
 
   def destroy
     @product.destroy
-    redirect_to products_path, status: :see_other, notice: "Product was successfully destroyed."
+    redirect_to products_path, status: :see_other, notice: t('.destroyed')
   end
 
   private

@@ -3,8 +3,8 @@
     <p><%= message %></p>
   <% end %>
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
   </div>
 
   <div class="field">
@@ -19,7 +19,7 @@
 
   <div class="field">
     <%= form.label :image %>
-    <%= form.number_field :image %>
+    <%= form.file_field :image %>
   </div>
 
   <div class="actions">
