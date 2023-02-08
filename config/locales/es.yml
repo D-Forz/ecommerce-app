@@ -28,22 +28,36 @@ es:
           has_many: "No se puede eliminar el registro porque tiene %{record} dependientes"
   common:
     confirm: "¿Estás seguro?"
+    back: "Volver"
   products:
     index:
       title: "Productos"
-      description: "Estos son los productos que tenemos disponibles"
     show:
       title: "Producto"
-      description: "Aquí puedes ver el producto"
     new:
       title: "Nuevo producto"
-      description: "Aquí puedes crear un nuevo producto"
     edit:
       title: "Editar producto"
-      description: "Aquí puedes editar el producto"
     create:
       created: "Tu producto ha sido creado"
     update:
       updated: "Tu producto ha sido actualizado"
     destroy:
       destroyed: "Tu producto ha sido eliminado"
+  categories:
+    category:
+      edit: "Editar categoría"
+      destroy: "Eliminar categoría"
+    index:
+      title: "Categorías"
+      new: "Nueva categoría"
+    new:
+      title: "Nueva categoría"
+    edit:
+      title: "Editar categoría"
+    create:
+      created: "Tu categoría ha sido creada"
+    update:
+      updated: "Tu categoría ha sido actualizada"
+    destroy:
+      destroyed: "Tu categoría ha sido eliminada"
