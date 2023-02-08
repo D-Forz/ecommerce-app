@@ -10,6 +10,14 @@ RSpec.describe "Products", type: :request do # rubocop:disable Metrics/BlockLeng
     end
   end
 
+  describe "GET /products/new" do
+    it "return http status 200 and render the new template" do
+      get new_product_path
+      expect(response).to have_http_status(:success)
+      expect(response).to render_template("new")
+    end
+  end
+
   describe "GET /products/:id" do
     it "return http status 200 and render the show template" do
       get product_path(product)
@@ -32,12 +40,13 @@ RSpec.describe "Products", type: :request do # rubocop:disable Metrics/BlockLeng
     end
 
     context "with invalid attributes" do
-      it "return http status 200 and render the new template" do
+      it "return http status 422 and render the new template" do
         expect do
           post products_path, params: { product: { title: nil } }
         end.to change(Product, :count).by(0)
 
         expect(response).to render_template("new")
+        expect(response).to have_http_status(:unprocessable_entity)
       end
     end
   end
@@ -54,11 +63,12 @@ RSpec.describe "Products", type: :request do # rubocop:disable Metrics/BlockLeng
     end
 
     context "with invalid attributes" do
-      it "return http status 200 and doesn't update the product" do
+      it "return http status 422 and doesn't update the product" do
         put product_path(product), params: { product: { title: nil } }
 
         expect(response).to render_template("edit")
         expect(product.reload.title).to eq(product.title)
+        expect(response).to have_http_status(:unprocessable_entity)
       end
     end
   end
