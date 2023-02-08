@@ -2,4 +2,10 @@
   <h3><%= link_to product.title, product_path(product) %></h3>
   <p><%= product.description %></p>
   <p><%= product.price %></p>
+  <p><%= link_to t('.edit'), edit_product_path(product) %></p>
+  <p>
+    <%= link_to t('.delete'), product, data: {
+      turbo_method: :delete, turbo_confirm: t('common.confirm')
+      } %>
+  </p>
 </div>
