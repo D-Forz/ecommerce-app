@@ -1,7 +1,12 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: %i[show edit update destroy]
   def index
-    @products = Product.all.with_attached_image.order(created_at: :desc)
+    @categories = Category.order(name: :asc).load_async
+    @products = Product.with_attached_image.order(created_at: :desc).load_async
+
+    if params[:category_id]
+      @products = @products.where(category_id: params[:category_id])
+    end
   end
 
   def show; end
