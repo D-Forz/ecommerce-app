@@ -35,6 +35,10 @@ es:
       all: "Todos los productos"
       min_price: "Precio mínimo"
       max_price: "Precio máximo"
+      query_text: "Buscar"
+      expensive: "Más caros primero"
+      cheapest: "Más baratos primero"
+      newest: "Más recientes primero"
     show:
       title: "Producto"
     new:

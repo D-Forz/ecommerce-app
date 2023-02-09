@@ -75,3 +75,6 @@ group :test do
   gem "webdrivers"
   gem "shoulda-matchers", "~> 5.3"
 end
+
+# Postgres full text search
+gem "pg_search", "~> 2.3"

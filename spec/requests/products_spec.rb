@@ -10,7 +10,7 @@ RSpec.describe "Products", type: :request do # rubocop:disable Metrics/BlockLeng
     end
 
     it "render a list of products filtered by category" do
-      category = create(:category)
+      category = create(:category, name: "New Category")
       product.update(category:)
       get products_path(category_id: category.id)
       expect(response.body).to include(product.title)
@@ -23,6 +23,26 @@ RSpec.describe "Products", type: :request do # rubocop:disable Metrics/BlockLeng
 
     it "render a list of products filtered by max_price" do
       get products_path(max_price: product.price)
+      expect(response.body).to include(product.title)
+    end
+
+    it "render a list of products filtered by query_text" do
+      get products_path(query_text: product.title)
+      expect(response.body).to include(product.title)
+    end
+
+    it "sort products by newest" do
+      get products_path(order_by: :newest)
+      expect(response.body).to include(product.title)
+    end
+
+    it "sort products by expensive" do
+      get products_path(order_by: :expensive)
+      expect(response.body).to include(product.title)
+    end
+
+    it "sort products by cheapest" do
+      get products_path(order_by: :cheapest)
       expect(response.body).to include(product.title)
     end
   end

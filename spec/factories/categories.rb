@@ -9,6 +9,26 @@
 #
 FactoryBot.define do
   factory :category do
-    name { Faker::Commerce.department }
+    name { "Electronics" }
+
+    trait :electronics do
+      name { "Electronics" }
+    end
+
+    trait :books do
+      name { "Books" }
+    end
+
+    trait :clothing do
+      name { "Clothing" }
+    end
+
+    trait :toys do
+      name { "Toys" }
+    end
+
+    trait :sports do
+      name { "Sports" }
+    end
   end
 end
