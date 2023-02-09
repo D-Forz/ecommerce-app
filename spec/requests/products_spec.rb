@@ -8,6 +8,23 @@ RSpec.describe "Products", type: :request do # rubocop:disable Metrics/BlockLeng
       expect(response).to have_http_status(:success)
       expect(response).to render_template("index")
     end
+
+    it "render a list of products filtered by category" do
+      category = create(:category)
+      product.update(category:)
+      get products_path(category_id: category.id)
+      expect(response.body).to include(product.title)
+    end
+
+    it "render a list of products filtered by min_price" do
+      get products_path(min_price: product.price)
+      expect(response.body).to include(product.title)
+    end
+
+    it "render a list of products filtered by max_price" do
+      get products_path(max_price: product.price)
+      expect(response.body).to include(product.title)
+    end
   end
 
   describe "GET /products/new" do
