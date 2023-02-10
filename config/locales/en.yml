@@ -1,4 +1,6 @@
 en:
+  app_name: "My shop"
+  app_description: "Where you can buy whatever you want"
   activerecord:
     models:
       product: "Product"
@@ -28,22 +30,54 @@ en:
           has_many: "Cannot delete record because dependent %{record} exist"
   common:
     confirm: "Are you sure?"
+    back: "Back"
+    not_logged_in: "You are not logged in"
+  auth:
+    users:
+      create:
+        created: "Your account has been created"
+    sessions:
+      create:
+        signed_in: "You have signed in"
+        invalid_login: "Invalid email or password"
+      destroy:
+        signed_out: "You have signed out"
   products:
     index:
       title: "Products"
-      description: "These are the products we have available"
+      all: "All products"
+      min_price: "Min price"
+      max_price: "Max price"
+      query_text: "Search"
+      expensive: "Expensive first"
+      cheapest: "Cheapest first"
+      newest: "Recently added"
     show:
       title: "Product"
-      description: "Here you can see the product"
     new:
       title: "New product"
-      description: "Here you can create a new product"
     edit:
       title: "Edit product"
-      description: "Here you can edit the product"
     create:
       created: "Your product has been created"
     update:
       updated: "Your product has been updated"
     destroy:
       destroyed: "Your product has been deleted"
+  categories:
+    category:
+      edit: "Edit category"
+      destroy: "Delete category"
+    index:
+      title: "Categories"
+      new: "New category"
+    new:
+      title: "New category"
+    edit:
+      title: "Edit category"
+    create:
+      created: "Your category has been created"
+    update:
+      updated: "Your category has been updated"
+    destroy:
+      destroyed: "Your category has been deleted"

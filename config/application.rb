@@ -20,5 +20,6 @@ module EcommerceApp
     # config.eager_load_paths << Rails.root.join("extras")
     config.i18n.available_locales = %i[en es]
     config.i18n.default_locale = :en
+    config.active_record.async_query_executor = :global_thread_pool
   end
 end
