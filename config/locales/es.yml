@@ -1,4 +1,6 @@
 es:
+  app_name: "Mi tienda"
+  app_description: "Donde puedes comprar lo que quieras"
   activerecord:
     models:
       product: "Producto"

@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   before_action :set_product, only: %i[show edit update destroy]
   def index
     @categories = Category.order(name: :asc).load_async
-    @products = FindProducts.new.call(params).load_async
+    @products = FindProducts.new.call(product_params_index).load_async
   end
 
   def show; end
@@ -39,6 +39,10 @@ class ProductsController < ApplicationController
 
   def set_product
     @product = Product.find(params[:id])
+  end
+
+  def product_params_index
+    params.permit(:category_id, :min_price, :max_price, :query_text, :order_by)
   end
 
   def product_params

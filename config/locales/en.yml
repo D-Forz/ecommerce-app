@@ -1,4 +1,6 @@
 en:
+  app_name: "My shop"
+  app_description: "Where you can buy whatever you want"
   activerecord:
     models:
       product: "Product"
