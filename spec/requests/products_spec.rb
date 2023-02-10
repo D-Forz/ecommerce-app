@@ -2,7 +2,12 @@ require 'rails_helper'
 
 RSpec.describe "Products", type: :request do # rubocop:disable Metrics/BlockLength
   let!(:product) { create(:product) }
-  describe "GET /products" do
+
+  before(:each) do
+    login
+  end
+
+  describe "GET /products" do # rubocop:disable Metrics/BlockLength
     it "return http status 200 and render the index template" do
       get products_path
       expect(response).to have_http_status(:success)

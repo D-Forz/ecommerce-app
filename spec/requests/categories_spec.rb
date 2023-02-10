@@ -2,6 +2,11 @@ require 'rails_helper'
 
 RSpec.describe "Categories", type: :request do # rubocop:disable Metrics/BlockLength
   let!(:category) { create(:category, :electronics) }
+
+  before(:each) do
+    login
+  end
+
   describe "GET /categories" do
     it "return http status 200 and render the index template" do
       get categories_path
