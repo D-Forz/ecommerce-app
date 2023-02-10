@@ -31,6 +31,17 @@ en:
   common:
     confirm: "Are you sure?"
     back: "Back"
+    not_logged_in: "You are not logged in"
+  auth:
+    users:
+      create:
+        created: "Your account has been created"
+    sessions:
+      create:
+        signed_in: "You have signed in"
+        invalid_login: "Invalid email or password"
+      destroy:
+        signed_out: "You have signed out"
   products:
     index:
       title: "Products"

@@ -31,6 +31,18 @@ es:
   common:
     confirm: "¿Estás seguro?"
     back: "Volver"
+    not_logged_in: "No has iniciado sesión"
+  auth:
+    users:
+      new: "Registrarse"
+      create:
+        created: "Tu cuenta ha sido creada"
+    sessions:
+      create:
+        signed_in: "Has iniciado sesión"
+        invalid_login: "Email o contraseña inválidos"
+      destroy:
+        signed_out: "Has cerrado sesión"
   products:
     index:
       title: "Productos"
