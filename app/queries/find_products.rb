@@ -7,10 +7,10 @@ class FindProducts
 
   def call(params = {})
     scoped = products
-    scoped = filter_by_category_id(scoped, params[:category_id]) if params[:category_id].present?
-    scoped = filter_by_min_price(scoped, params[:min_price]) if params[:min_price].present?
-    scoped = filter_by_max_price(scoped, params[:max_price]) if params[:max_price].present?
-    scoped = filter_by_query_text(scoped, params[:query_text]) if params[:query_text].present?
+    scoped = filter_by_category_id(scoped, params[:category_id])
+    scoped = filter_by_min_price(scoped, params[:min_price])
+    scoped = filter_by_max_price(scoped, params[:max_price])
+    scoped = filter_by_query_text(scoped, params[:query_text])
     sort(scoped, params[:order_by])
   end
 
