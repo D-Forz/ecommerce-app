@@ -4,44 +4,41 @@ en:
   activerecord:
     models:
       product: "Product"
+      user: "User"
+      category: "Category"
     attributes:
       product:
         title: "Title"
         description: "Description"
         price: "Price"
         image: "Image"
-    errors:
-      models:
-        product:
-          attributes:
-            title:
-              blank: "can't be blank"
-            description:
-              blank: "can't be blank"
-            price:
-              not_a_number: "is not a number"
-              greater_than: "must be greater than 0"
-            image:
-              blank: "can't be blank"
-      messages:
-        record_invalid: "Validation failed: %{errors}"
-        restrict_dependent_destroy:
-          has_one: "Cannot delete record because a dependent %{record} exists"
-          has_many: "Cannot delete record because dependent %{record} exist"
+      user:
+        email: "Email"
+        username: "Username"
+        password: "Password"
+      category:
+        name: "Name"
   common:
     confirm: "Are you sure?"
     back: "Back"
     not_logged_in: "You are not logged in"
+  shared:
+    header:
+      categories: "Categories"
+      add: "Add product"
+      login: "Login"
+      logout: "Logout"
+      register: "Register"
   auth:
     users:
       create:
         created: "Your account has been created"
     sessions:
       create:
-        signed_in: "You have signed in"
+        logged_in: "You have logged in"
         invalid_login: "Invalid email or password"
       destroy:
-        signed_out: "You have signed out"
+        logged_out: "You have logged out"
   products:
     index:
       title: "Products"
