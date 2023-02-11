@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Sessions", type: :request do
+RSpec.describe "Sessions", type: :request do # rubocop:disable Metrics/BlockLength
   let!(:user) { create(:user) }
   describe "GET /session/new" do
     it "return http status 200 and render the new template" do
@@ -26,6 +26,14 @@ RSpec.describe "Sessions", type: :request do
         expect(response).to have_http_status(:found)
         expect(response).to redirect_to(new_session_path)
       end
+    end
+  end
+
+  describe "DELETE /session" do
+    it "delete the session" do
+      delete session_path(user)
+      expect(response).to have_http_status(:found)
+      expect(response).to redirect_to(products_path)
     end
   end
 end
