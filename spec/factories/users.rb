@@ -3,6 +3,7 @@
 # Table name: users
 #
 #  id              :bigint           not null, primary key
+#  admin           :boolean          default(FALSE)
 #  email           :string           not null
 #  password_digest :string           not null
 #  username        :string           not null
@@ -22,6 +23,14 @@ FactoryBot.define do
 
     trait :invalid do
       email { nil }
+    end
+
+    trait :admin do
+      admin { true }
+    end
+
+    trait :testing_user do
+      username { "testing_user" }
     end
   end
 end
