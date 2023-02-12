@@ -22,6 +22,7 @@ es:
     confirm: "¿Estás seguro?"
     back: "Volver"
     not_logged_in: "No has iniciado sesión"
+    not_authorized: "No estás autorizado para hacer esto"
   shared:
     header:
       categories: "Categorías"

@@ -22,6 +22,7 @@ en:
     confirm: "Are you sure?"
     back: "Back"
     not_logged_in: "You are not logged in"
+    not_authorized: "You are not authorized to do this"
   shared:
     header:
       categories: "Categories"
