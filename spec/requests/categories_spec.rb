@@ -1,10 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe "Categories", type: :request do # rubocop:disable Metrics/BlockLength
+  let!(:user) { create(:user, :admin) }
   let!(:category) { create(:category, :electronics) }
 
   before(:each) do
-    login
+    post sessions_path, params: { login: user.username, password: user.password }
   end
 
   describe "GET /categories" do

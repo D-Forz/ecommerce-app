@@ -1,10 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe "Products", type: :request do # rubocop:disable Metrics/BlockLength
-  let!(:product) { create(:product) }
+  let!(:user) { create(:user) }
+  let!(:product) { create(:product, user:) }
 
   before(:each) do
-    login
+    post sessions_path, params: { login: user.username, password: user.password }
   end
 
   describe "GET /products" do # rubocop:disable Metrics/BlockLength
@@ -94,29 +95,28 @@ RSpec.describe "Products", type: :request do # rubocop:disable Metrics/BlockLeng
   end
 
   describe "PUT /products/:id" do
-    let(:new_attributes) { { title: "Product 2", price: 11.99 } }
     context "with valid attributes" do
-      it "return http status 302 and updates the product" do
-        put product_path(product), params: { product: new_attributes }
+      it "return http status 302 and redirect the show template" do
+        put product_path(product), params: { product: { title: "New Title" } }
 
         expect(response).to have_http_status(:redirect)
-        expect(product.reload.title).to eq("Product 2")
+        expect(response).to redirect_to(product_path(product))
+        expect(product.reload.title).to eq("New Title")
       end
     end
 
     context "with invalid attributes" do
-      it "return http status 422 and doesn't update the product" do
+      it "return http status 422 and render the edit template" do
         put product_path(product), params: { product: { title: nil } }
 
         expect(response).to render_template("edit")
-        expect(product.reload.title).to eq(product.title)
         expect(response).to have_http_status(:unprocessable_entity)
       end
     end
   end
 
   describe "DELETE /products/:id" do
-    it "return http status 302 and delete the requested product" do
+    it "return http status 302 and redirect the index template" do
       expect do
         delete product_path(product)
       end.to change(Product, :count).by(-1)
