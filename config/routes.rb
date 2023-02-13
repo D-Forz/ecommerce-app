@@ -1,3 +1,6 @@
+# == Route Map
+#
+
 Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -8,6 +11,7 @@ Rails.application.routes.draw do
     resources :sessions, only: %i[new create destroy], path: '/login', path_names: { new: '/' }
   end
 
+  resources :users, only: :show, path: '/user', param: :username
   resources :categories, except: :show
   resources :products, path: "/"
 end

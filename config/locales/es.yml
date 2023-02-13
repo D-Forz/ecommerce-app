@@ -23,6 +23,7 @@ es:
     back: "Volver"
     not_logged_in: "No has iniciado sesión"
     not_authorized: "No estás autorizado para hacer esto"
+    not_found: "No encontrado"
   shared:
     header:
       categories: "Categorías"
@@ -53,6 +54,9 @@ es:
       newest: "Más recientes primero"
     show:
       title: "Producto"
+      edit: "Editar producto"
+      delete: "Eliminar producto"
+      view_more_products: "Ver más productos de %{username}"
     new:
       title: "Nuevo producto"
     edit:

@@ -23,6 +23,7 @@ en:
     back: "Back"
     not_logged_in: "You are not logged in"
     not_authorized: "You are not authorized to do this"
+    not_found: "Not found"
   shared:
     header:
       categories: "Categories"
@@ -52,6 +53,9 @@ en:
       newest: "Recently added"
     show:
       title: "Product"
+      edit: "Edit product"
+      delete: "Delete product"
+      view_more_products: "View more products from %{username}"
     new:
       title: "New product"
     edit:
