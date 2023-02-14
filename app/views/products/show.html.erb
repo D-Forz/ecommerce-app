@@ -11,3 +11,5 @@
   } if @product.owner? %>
 <%= link_to t('.back'), products_path %>
 <%= link_to t('.view_more_products', username: @product.user.username), user_path(@product.user.username) %>
+
+<%= render partial: 'favorite', locals: { product: @product } %>

@@ -27,6 +27,7 @@ es:
   shared:
     header:
       categories: "Categorías"
+      favorites: "Favoritos"
       add: "Añadir producto"
       login: "Iniciar sesión"
       logout: "Cerrar sesión"
@@ -84,3 +85,6 @@ es:
       updated: "Tu categoría ha sido actualizada"
     destroy:
       destroyed: "Tu categoría ha sido eliminada"
+  favorites:
+    index:
+      title: "Mis Favoritos"

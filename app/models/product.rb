@@ -23,6 +23,7 @@
 #
 class Product < ApplicationRecord
   include PgSearch::Model
+  include Favoritable
   pg_search_scope :search_full_text, against: %i[title description]
 
   ORDER_BY = {
@@ -34,6 +35,8 @@ class Product < ApplicationRecord
   belongs_to :category
   belongs_to :user, default: -> { Current.user }
   has_one_attached :image
+  has_many :favorites, dependent: :destroy
+
   validates :title, :description, :price, presence: true
   validates :price, numericality: { greater_than: 0 }
 
