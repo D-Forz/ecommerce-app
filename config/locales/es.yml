@@ -46,7 +46,7 @@ es:
   products:
     index:
       title: "Productos"
-      all: "Todos los productos"
+      all: "Todos"
       min_price: "Precio mínimo"
       max_price: "Precio máximo"
       query_text: "Buscar"
