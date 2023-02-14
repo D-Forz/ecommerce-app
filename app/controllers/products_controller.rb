@@ -1,5 +1,4 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: %i[show edit update destroy]
   skip_before_action :protect_pages, only: %i[index show]
 
   def index
@@ -7,7 +6,9 @@ class ProductsController < ApplicationController
     @pagy, @products = pagy_countless(FindProducts.new.call(product_params_index).load_async, items: 10)
   end
 
-  def show; end
+  def show
+    product
+  end
 
   def new
     @product = Product.new
@@ -23,12 +24,12 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    authorize!(@product)
+    authorize!(product)
   end
 
   def update
-    authorize!(@product)
-    if @product.update(product_params)
+    authorize!(product)
+    if product.update(product_params)
       redirect_to @product, notice: t('.updated')
     else
       render :edit, status: :unprocessable_entity
@@ -36,19 +37,28 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    authorize!(@product)
-    @product.destroy
+    authorize!(product)
+    product.destroy
     redirect_to products_path, status: :see_other, notice: t('.destroyed')
   end
 
   private
 
-  def set_product
-    @product = Product.find(params[:id])
+  def product
+    @product ||= Product.find(params[:id])
   end
 
   def product_params_index
-    params.permit(:category_id, :min_price, :max_price, :query_text, :order_by, :page)
+    params.permit(
+      :category_id,
+      :min_price,
+      :max_price,
+      :query_text,
+      :order_by,
+      :page,
+      :favorites,
+      :user_id
+    )
   end
 
   def product_params

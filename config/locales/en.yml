@@ -27,6 +27,7 @@ en:
   shared:
     header:
       categories: "Categories"
+      favorites: "Favorites"
       add: "Add product"
       login: "Login"
       logout: "Logout"
@@ -83,3 +84,10 @@ en:
       updated: "Your category has been updated"
     destroy:
       destroyed: "Your category has been deleted"
+  favorites:
+    index:
+      title: "My Favorites"
+    create:
+      created: "The product has been added to your favorites"
+    destroy:
+      destroyed: "The product has been removed from your favorites"

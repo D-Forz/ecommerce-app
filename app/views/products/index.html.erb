@@ -20,15 +20,17 @@
 
   <%= render partial: "category", collection: @categories %>
 
-  <%= turbo_frame_tag "products-#{@pagy.page}" do %>
-    <%= render partial: "product", collection: @products %>
-    <% if @pagy.next %>
-      <%= turbo_frame_tag(
-        "products-#{@pagy.next}",
-        loading: :lazy,
-        src: pagy_url_for(@pagy, @pagy.next),
-        target: "_top") do %>
-        Loading...
+  <%= turbo_frame_tag :products do %>
+    <%= turbo_frame_tag "products-#{@pagy.page}" do %>
+      <%= render partial: "product", collection: @products %>
+      <% if @pagy.next %>
+        <%= turbo_frame_tag(
+          "products-#{@pagy.next}",
+          loading: :lazy,
+          src: pagy_url_for(@pagy, @pagy.next),
+          target: "_top") do %>
+          Loading...
+        <% end %>
       <% end %>
     <% end %>
   <% end %>
