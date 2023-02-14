@@ -5,7 +5,7 @@ RSpec.describe "Categories", type: :request do # rubocop:disable Metrics/BlockLe
   let!(:category) { create(:category, :electronics) }
 
   before(:each) do
-    post sessions_path, params: { login: user.username, password: user.password }
+    sign_in user
   end
 
   describe "GET /categories" do

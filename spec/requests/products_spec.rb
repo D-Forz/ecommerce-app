@@ -5,7 +5,7 @@ RSpec.describe "Products", type: :request do # rubocop:disable Metrics/BlockLeng
   let!(:product) { create(:product, user:) }
 
   before(:each) do
-    post sessions_path, params: { login: user.username, password: user.password }
+    sign_in user
   end
 
   describe "GET /products" do # rubocop:disable Metrics/BlockLength
