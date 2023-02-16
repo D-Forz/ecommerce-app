@@ -60,6 +60,12 @@ es:
       view_more_products: "Ver más productos de %{username}"
     new:
       title: "Nuevo producto"
+    form:
+      title_placeholder: "Introduce el título"
+      description_placeholder: "Introduce la descripción"
+      price_placeholder: "Introduce el precio"
+      category_placeholder: "Selecciona una categoría"
+      submit: "Añadir producto"
     edit:
       title: "Editar producto"
     create:

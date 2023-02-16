@@ -59,6 +59,12 @@ en:
       view_more_products: "View more products from %{username}"
     new:
       title: "New product"
+    form:
+      title_placeholder: "Enter title"
+      description_placeholder: "Enter description"
+      price_placeholder: "Enter price"
+      category_placeholder: "Select category"
+      submit: "Create product"
     edit:
       title: "Edit product"
     create:
