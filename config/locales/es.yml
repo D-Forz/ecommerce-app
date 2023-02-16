@@ -25,7 +25,7 @@ es:
     not_authorized: "No estás autorizado para hacer esto"
     not_found: "No encontrado"
   shared:
-    header:
+    items:
       categories: "Categorías"
       favorites: "Favoritos"
       add: "Añadir producto"

@@ -12,6 +12,18 @@ gem "sprockets-rails"
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
 
+# Postgres full text search
+gem "pg_search", "~> 2.3"
+
+# Pagination
+gem "pagy", "~> 6.0"
+
+# Tailwind CSS
+gem "tailwindcss-rails", "~> 2.0"
+
+# View components
+gem "view_component", "~> 2.82"
+
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
 
@@ -75,10 +87,3 @@ group :test do
   gem "webdrivers"
   gem "shoulda-matchers", "~> 5.3"
 end
-
-# Postgres full text search
-gem "pg_search", "~> 2.3"
-
-gem "pagy", "~> 6.0"
-
-gem "tailwindcss-rails", "~> 2.0"
