@@ -94,3 +94,6 @@ es:
   favorites:
     index:
       title: "Mis Favoritos"
+  user_mailer:
+    welcome:
+      welcome_message: "Bienvenido a MyShop, %{username}!"

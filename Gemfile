@@ -86,4 +86,5 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
   gem "shoulda-matchers", "~> 5.3"
+  gem "webmock", "~> 3.18"
 end

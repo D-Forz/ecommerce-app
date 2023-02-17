@@ -33,6 +33,10 @@ RSpec.describe "Users", type: :request do # rubocop:disable Metrics/BlockLength
     context "with valid parameters" do
       it "create a new user" do
         expect do
+          stub_request(:get, "http://ip-api.com/json/127.0.0.1")
+            .to_return(status: 200, body: {
+              status: "fail"
+            }.to_json, headers: {})
           post users_path, params: { user: attributes_for(:user) }
         end.to change(User, :count).by(1)
 
@@ -43,6 +47,10 @@ RSpec.describe "Users", type: :request do # rubocop:disable Metrics/BlockLength
 
     context "with invalid parameters" do
       it "does not create a new user" do
+        stub_request(:get, "http://ip-api.com/json/127.0.0.1")
+          .to_return(status: 200, body: {
+            status: "fail"
+          }.to_json, headers: {})
         post users_path, params: { user: attributes_for(:user, :invalid) }
         expect(response).to have_http_status(:unprocessable_entity)
         expect(response).to render_template("new")

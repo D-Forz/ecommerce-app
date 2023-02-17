@@ -4,6 +4,7 @@
 #
 #  id              :bigint           not null, primary key
 #  admin           :boolean          default(FALSE)
+#  country         :string
 #  email           :string           not null
 #  password_digest :string           not null
 #  username        :string           not null

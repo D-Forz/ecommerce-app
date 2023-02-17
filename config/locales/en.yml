@@ -97,3 +97,6 @@ en:
       created: "The product has been added to your favorites"
     destroy:
       destroyed: "The product has been removed from your favorites"
+  user_mailer:
+    welcome:
+      welcome_message: "Welcome to MyShop, %{username}!"
