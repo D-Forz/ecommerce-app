@@ -21,5 +21,6 @@ module EcommerceApp
     config.i18n.available_locales = %i[en es]
     config.i18n.default_locale = :en
     config.active_record.async_query_executor = :global_thread_pool
+    config.active_job.queue_adapter = :sidekiq
   end
 end
