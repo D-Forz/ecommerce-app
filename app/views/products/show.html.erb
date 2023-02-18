@@ -1,9 +1,4 @@
-<h2><%= t('.title') %></h2>
-
-<%= image_tag @product.image, width: 200 if @product.image.attached? %>
-<h3><%= @product.title %></h3>
-<p><%= @product.description %></p>
-<p><%= @product.price %></p>
+<%= render partial: "products/product_details", locals: { product: @product } %>
 
 <%= link_to t('.edit'), edit_product_path(@product) if @product.owner? %>
 <%= link_to t('.delete'), @product, data: {
@@ -13,3 +8,5 @@
 <%= link_to t('.view_more_products', username: @product.user.username), user_path(@product.user.username) %>
 
 <%= render partial: 'favorite', locals: { product: @product } %>
+
+<%= turbo_stream_from @product %>
