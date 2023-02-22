@@ -1,10 +1,10 @@
 require 'rails_helper'
 
-RSpec.describe "Categories", type: :request do # rubocop:disable Metrics/BlockLength
+RSpec.describe "Categories" do
   let!(:user) { create(:user, :admin) }
   let!(:category) { create(:category, :electronics) }
 
-  before(:each) do
+  before do
     sign_in user
   end
 
@@ -26,6 +26,7 @@ RSpec.describe "Categories", type: :request do # rubocop:disable Metrics/BlockLe
 
   describe "POST /categories" do
     let(:valid_attributes) { category.attributes }
+
     context "with valid attributes" do
       it "return http status 302 and redirect the show template" do
         expect do
@@ -41,7 +42,7 @@ RSpec.describe "Categories", type: :request do # rubocop:disable Metrics/BlockLe
       it "return http status 422 and render the new template" do
         expect do
           post categories_path, params: { category: { name: nil } }
-        end.to change(Category, :count).by(0)
+        end.not_to change(Category, :count)
 
         expect(response).to render_template("new")
         expect(response).to have_http_status(:unprocessable_entity)
@@ -51,6 +52,7 @@ RSpec.describe "Categories", type: :request do # rubocop:disable Metrics/BlockLe
 
   describe "PUT /categories/:id" do
     let(:new_attributes) { { name: "Category 2" } }
+
     context "with valid attributes" do
       it "return http status 302 and updates the category" do
         put category_path(category), params: { category: new_attributes }

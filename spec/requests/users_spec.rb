@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Users", type: :request do # rubocop:disable Metrics/BlockLength
+RSpec.describe "Users" do
   describe "GET /user/:username" do
     let(:user) { create(:user) }
 

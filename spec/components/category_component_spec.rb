@@ -3,14 +3,14 @@
 require "rails_helper"
 
 RSpec.describe CategoryComponent, type: :component do
-  it "should render an empty category" do
-    render_inline(CategoryComponent.new)
+  it "render an empty category" do
+    render_inline(described_class.new)
     expect(page).to have_text("All")
   end
 
-  it "should render a category" do
+  it "render a category" do
     category = create(:category)
-    render_inline(CategoryComponent.new(category:))
+    render_inline(described_class.new(category:))
     expect(page).to have_text(category.name)
   end
 end

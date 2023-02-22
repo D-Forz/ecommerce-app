@@ -46,3 +46,9 @@ Metrics/AbcSize:
   Description: 'A calculated magnitude based on number of assignments, branches, and
     conditions.'
   Enabled: false
+RSpec/MultipleExpectations:
+  Description: 'Checks for multiple expectations in one example.'
+  Max: 3
+RSpec/ExampleLength:
+  Description: 'Checks for long example groups.'
+  Max: 10

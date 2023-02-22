@@ -1,7 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe "Sessions", type: :request do # rubocop:disable Metrics/BlockLength
+RSpec.describe "Sessions" do
   let!(:user) { create(:user) }
+
   describe "GET /session/new" do
     it "return http status 200 and render the new template" do
       get new_session_path

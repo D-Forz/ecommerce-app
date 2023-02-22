@@ -1,14 +1,14 @@
 require 'rails_helper'
 
-RSpec.describe "Products", type: :request do # rubocop:disable Metrics/BlockLength
+RSpec.describe "Products" do
   let!(:user) { create(:user) }
   let!(:product) { create(:product, user:) }
 
-  before(:each) do
+  before do
     sign_in user
   end
 
-  describe "GET /products" do # rubocop:disable Metrics/BlockLength
+  describe "GET /products" do
     it "return http status 200 and render the index template" do
       get products_path
       expect(response).to have_http_status(:success)
@@ -71,6 +71,7 @@ RSpec.describe "Products", type: :request do # rubocop:disable Metrics/BlockLeng
 
   describe "POST /products" do
     let(:valid_attributes) { product.attributes }
+
     context "with valid attributes" do
       it "return http status 302 and redirect the show template" do
         expect do
@@ -86,7 +87,7 @@ RSpec.describe "Products", type: :request do # rubocop:disable Metrics/BlockLeng
       it "return http status 422 and render the new template" do
         expect do
           post products_path, params: { product: { title: nil } }
-        end.to change(Product, :count).by(0)
+        end.not_to change(Product, :count)
 
         expect(response).to render_template("new")
         expect(response).to have_http_status(:unprocessable_entity)

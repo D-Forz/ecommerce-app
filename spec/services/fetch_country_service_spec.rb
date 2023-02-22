@@ -1,8 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe FetchCountryService, type: :service do
+RSpec.describe FetchCountryService do
   describe "#perform" do
     let(:ip) { "24.48.0.1" }
+
     context "when the ip is valid" do
       it "returns the country code" do
         stub_request(:get, "http://ip-api.com/json/#{ip}")
@@ -10,7 +11,7 @@ RSpec.describe FetchCountryService, type: :service do
             status: "success",
             countryCode: "CA"
           }.to_json, headers: {})
-        expect(FetchCountryService.new(ip).perform).to eq("CA")
+        expect(described_class.new(ip).perform).to eq("CA")
       end
     end
 
@@ -21,7 +22,7 @@ RSpec.describe FetchCountryService, type: :service do
             status: "fail",
             message: "invalid query"
           }.to_json, headers: {})
-        expect(FetchCountryService.new("invalid").perform).to eq(nil)
+        expect(described_class.new("invalid").perform).to be_nil
       end
     end
   end
