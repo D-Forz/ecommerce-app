@@ -38,6 +38,11 @@ es:
       create:
         created: "Tu cuenta ha sido creada"
     sessions:
+      new:
+        login: "Inicia sesión en tu cuenta"
+        no_account: "¿No tienes una cuenta?"
+        sign_up: "Regístrate aquí"
+        sign_in: "Iniciar sesión"
       create:
         logged_in: "Has iniciado sesión"
         invalid_login: "Email o contraseña inválidos"

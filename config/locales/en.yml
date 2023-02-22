@@ -37,6 +37,11 @@ en:
       create:
         created: "Your account has been created"
     sessions:
+      new:
+        login: "Login to your account"
+        no_account: "Don't have an account?"
+        sign_up: "Sign up here"
+        sign_in: "Sign in"
       create:
         logged_in: "You have logged in"
         invalid_login: "Invalid email or password"
