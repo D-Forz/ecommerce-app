@@ -12,13 +12,11 @@
   </head>
 
   <body class="bg-gray-100">
-    <% if content_for(:auth) %>
-      <%= yield(:auth) %>
-    <% else %>
-    <%= render "shared/header" %>
-    <%= render "shared/flash" %>
-    <%= yield %>
-    <%= turbo_frame_tag "modal" %>
+    <% unless params[:controller].include? 'auth/' %>
+      <%= render "shared/header" %>
+      <%= render "shared/flash" %>
     <% end %>
+  <%= yield %>
+  <%= turbo_frame_tag "modal" %>
   </body>
 </html>

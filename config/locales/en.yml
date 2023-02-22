@@ -20,7 +20,7 @@ en:
         name: "Name"
   common:
     confirm: "Are you sure?"
-    back: "Back"
+    back: "Home"
     not_logged_in: "You are not logged in"
     not_authorized: "You are not authorized to do this"
     not_found: "Not found"
@@ -34,6 +34,10 @@ en:
       register: "Register"
   auth:
     users:
+      new:
+        welcome: "Register a new account"
+        account: "Already have an account?"
+        sign_in: "Sign in here"
       create:
         created: "Your account has been created"
     sessions:

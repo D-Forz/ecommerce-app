@@ -20,7 +20,7 @@ es:
         name: "Nombre"
   common:
     confirm: "¿Estás seguro?"
-    back: "Volver"
+    back: "Inicio"
     not_logged_in: "No has iniciado sesión"
     not_authorized: "No estás autorizado para hacer esto"
     not_found: "No encontrado"
@@ -34,7 +34,10 @@ es:
       register: "Registrarse"
   auth:
     users:
-      new: "Registrarse"
+      new:
+        welcome: "Regístrate"
+        account: "¿Ya tienes una cuenta?"
+        sign_in: "Inicia sesión aquí"
       create:
         created: "Tu cuenta ha sido creada"
     sessions:
