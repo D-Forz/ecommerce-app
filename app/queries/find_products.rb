@@ -23,37 +23,37 @@ class FindProducts
   end
 
   def filter_by_category_id(scoped, category_id)
-    return scoped unless category_id.present?
+    return scoped if category_id.blank?
 
     scoped.where(category_id:)
   end
 
   def filter_by_min_price(scoped, min_price)
-    return scoped unless min_price.present?
+    return scoped if min_price.blank?
 
     scoped.where("price >= ?", min_price)
   end
 
   def filter_by_max_price(scoped, max_price)
-    return scoped unless max_price.present?
+    return scoped if max_price.blank?
 
     scoped.where("price <= ?", max_price)
   end
 
   def filter_by_query_text(scoped, query_text)
-    return scoped unless query_text.present?
+    return scoped if query_text.blank?
 
     scoped.search_full_text(query_text)
   end
 
   def filter_by_user_id(scoped, user_id)
-    return scoped unless user_id.present?
+    return scoped if user_id.blank?
 
     scoped.where(user_id:)
   end
 
   def filter_by_favorites(scoped, favorites)
-    return scoped unless favorites.present?
+    return scoped if favorites.blank?
 
     scoped.joins(:favorites).where(favorites: { user_id: Current.user.id })
   end

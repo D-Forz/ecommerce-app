@@ -1,7 +1,9 @@
-class Auth::SessionsController < ApplicationController # rubocop:disable Style/ClassAndModuleChildren
+class Auth::SessionsController < ApplicationController
   skip_before_action :protect_pages
 
-  def new; end
+  def new
+    redirect_to products_path if Current.user
+  end
 
   def create
     @user = User.find_by("email = :login OR username = :login", { login: params[:login] })

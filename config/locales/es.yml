@@ -20,7 +20,7 @@ es:
         name: "Nombre"
   common:
     confirm: "¿Estás seguro?"
-    back: "Volver"
+    back: "Inicio"
     not_logged_in: "No has iniciado sesión"
     not_authorized: "No estás autorizado para hacer esto"
     not_found: "No encontrado"
@@ -34,10 +34,18 @@ es:
       register: "Registrarse"
   auth:
     users:
-      new: "Registrarse"
+      new:
+        welcome: "Regístrate"
+        account: "¿Ya tienes una cuenta?"
+        sign_in: "Inicia sesión aquí"
       create:
         created: "Tu cuenta ha sido creada"
     sessions:
+      new:
+        login: "Inicia sesión en tu cuenta"
+        no_account: "¿No tienes una cuenta?"
+        sign_up: "Regístrate aquí"
+        sign_in: "Iniciar sesión"
       create:
         logged_in: "Has iniciado sesión"
         invalid_login: "Email o contraseña inválidos"
@@ -96,4 +104,5 @@ es:
       title: "Mis Favoritos"
   user_mailer:
     welcome:
+      subject: "Bienvenido a MyShop, %{username}!"
       welcome_message: "Bienvenido a MyShop, %{username}!"
