@@ -1,4 +1,4 @@
-class Auth::SessionsController < ApplicationController # rubocop:disable Style/ClassAndModuleChildren
+class Auth::SessionsController < ApplicationController
   skip_before_action :protect_pages
 
   def new; end

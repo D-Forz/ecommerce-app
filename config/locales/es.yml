@@ -104,4 +104,5 @@ es:
       title: "Mis Favoritos"
   user_mailer:
     welcome:
+      subject: "Bienvenido a MyShop, %{username}!"
       welcome_message: "Bienvenido a MyShop, %{username}!"

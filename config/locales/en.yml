@@ -108,4 +108,5 @@ en:
       destroyed: "The product has been removed from your favorites"
   user_mailer:
     welcome:
+      subject: "Welcome to MyShop, %{username}!"
       welcome_message: "Welcome to MyShop, %{username}!"

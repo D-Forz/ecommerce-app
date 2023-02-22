@@ -8,6 +8,7 @@ AllCops:
     - 'bin/**/*'
     - 'db/**/*'
     - 'config/**/*'
+    - 'lib/**/*'
     - 'node_modules/**/*'
     - 'script/**/*'
     - 'tmp/**/*'
@@ -34,4 +35,14 @@ Style/EmptyMethod:
   Enabled: false
 Style/StringLiterals:
   Description: 'Checks if uses of quotes match the configured preference.'
+  Enabled: false
+Style/MissingRespondToMissing:
+  Description: 'Checks for missing respond_to_missing? when using method_missing.'
+  Enabled: false
+Metrics/MethodLength:
+  Description: 'Avoid methods longer than 15 lines of code.'
+  Max: 15
+Metrics/AbcSize:
+  Description: 'A calculated magnitude based on number of assignments, branches, and
+    conditions.'
   Enabled: false

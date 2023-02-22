@@ -30,7 +30,7 @@ class Product < ApplicationRecord
     newest: "created_at DESC",
     expensive: "price DESC",
     cheapest: "price ASC"
-  }
+  }.freeze
 
   belongs_to :category
   belongs_to :user, default: -> { Current.user }

@@ -14,6 +14,10 @@ class ProductsController < ApplicationController
     @product = Product.new
   end
 
+  def edit
+    authorize!(product)
+  end
+
   def create
     @product = Product.new(product_params)
     if @product.save
@@ -21,10 +25,6 @@ class ProductsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
-  end
-
-  def edit
-    authorize!(product)
   end
 
   def update

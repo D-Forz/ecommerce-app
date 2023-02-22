@@ -4,6 +4,7 @@ class CategoryComponent < ViewComponent::Base
   attr_reader :category
 
   def initialize(category: nil)
+    super
     @category = category
   end
 
