@@ -15,11 +15,11 @@
       </p>
     </div>
 
-    <%= form_with(url: sessions_path, html: {class:"mx-auto mt-8 mb-0 max-w-md space-y-4"}) do |form| %>
+    <%= form_with(url: sessions_path, html: { class: "mx-auto mt-8 mb-0 max-w-md space-y-4" }) do |form| %>
       <div>
         <%= form.label :login, class: "sr-only" %>
         <div class="relative">
-          <%= form.text_field :login, required: true, placeholder: "email or username", class:"w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm" %>
+          <%= form.text_field :login, required: true, placeholder: "email or username", class: "w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm" %>
           <span class="absolute inset-y-0 right-0 grid place-content-center px-4">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"/>
@@ -31,7 +31,7 @@
       <div>
         <%= form.label :password, class: "sr-only" %>
         <div class="relative">
-          <%= form.password_field :password, required: true, placeholder: "password", class:"w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm" %>
+          <%= form.password_field :password, required: true, placeholder: "password", class: "w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm" %>
           <span class="absolute inset-y-0 right-0 grid place-content-center px-4">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
@@ -42,11 +42,11 @@
       </div>
 
       <div>
-        <%= form.submit t('.sign_in'), class:"w-full rounded-lg bg-blue-500 px-5 py-3 text-sm font-medium text-white cursor-pointer" %>
+        <%= form.submit t('.sign_in'), class: "w-full rounded-lg bg-blue-500 px-5 py-3 text-sm font-medium text-white cursor-pointer" %>
       </div>
     <% end %>
     <div class="mx-auto max-w-lg text-center mt-4">
-      <%= link_to t('common.back'), products_path, class:"text-sm text-gray-500" %>
+      <%= link_to t('common.back'), products_path, class: "text-sm text-gray-500" %>
     </div>
   </div>
 
