@@ -7,21 +7,11 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 require 'factory_bot_rails'
-
-p "Creating categories..."
-FactoryBot.create(:category, :electronics)
-FactoryBot.create(:category, :books)
-FactoryBot.create(:category, :clothing)
-FactoryBot.create(:category, :toys)
-FactoryBot.create(:category, :sports)
-
 user = FactoryBot.create(:user)
+%w[electronics books clothing toys sports].each do |category|
+  FactoryBot.create(:category, name: category)
+  Rails.logger.info "Creating #{category} products..."
+  FactoryBot.create_list(:product, 20, category: Category.find_by(name: category), user:)
+end
 
-p "Creating products..."
-FactoryBot.create_list(:product, 10, category: Category.find_by(name: "Electronics"), user:)
-FactoryBot.create_list(:product, 10, category: Category.find_by(name: "Books"), user:)
-FactoryBot.create_list(:product, 10, category: Category.find_by(name: "Clothing"), user:)
-FactoryBot.create_list(:product, 10, category: Category.find_by(name: "Toys"), user:)
-FactoryBot.create_list(:product, 10, category: Category.find_by(name: "Sports"), user:)
-
-p "Finished!"
+Rails.logger.info "The database has been seeded."
