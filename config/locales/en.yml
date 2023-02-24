@@ -25,7 +25,7 @@ en:
     not_authorized: "You are not authorized to do this"
     not_found: "Not found"
   shared:
-    items:
+    header:
       categories: "Categories"
       favorites: "Favorites"
       add: "Add product"
