@@ -22,7 +22,7 @@ gem "pagy", "~> 6.0"
 gem "tailwindcss-rails", "~> 2.0"
 
 # View components
-gem "view_component", "~> 2.82"
+gem "view_component", "~> 3.0"
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
